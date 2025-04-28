@@ -1,0 +1,12 @@
+name: Scheduled Job
+on:
+  schedule:
+    - cron: 'H/15 * * * *'  # This will run every 15 minutes
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Print system time
+        run: date
